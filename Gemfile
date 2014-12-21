@@ -52,6 +52,7 @@ group :development do
 end
 
 group :development, :test do
+  gem 'mysql2'
   gem 'rspec-rails', '~> 2'
   gem 'headless'
   gem 'debugger', :platforms => 'mri_19' unless ENV["CI"]
@@ -73,6 +74,10 @@ end
 group :heroku do
   gem 'unicorn', :platform => :ruby
   gem 'rails_12factor'
+end
+
+group :production do
+  gem 'pg', '~> 0.13.2'
 end
 
 # Gems used only for assets and not required
